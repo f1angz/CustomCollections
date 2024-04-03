@@ -1,6 +1,5 @@
 package com.collections;
 
-import java.sql.SQLOutput;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.List;
