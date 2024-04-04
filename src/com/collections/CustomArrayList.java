@@ -2,8 +2,9 @@ package com.collections;
 
 import java.util.AbstractList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
-public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
+public class CustomArrayList<E> extends AbstractList<E> {
 
     private Object[] objects;
     private int size = 0;
@@ -30,6 +31,17 @@ public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
         return true;
     }
 
+    public boolean addAll(Collection<? extends E> collection) {
+        for (E element : collection) {
+            add(element);
+        }
+        return true;
+    }
+
+    public void clear() {
+        Arrays.fill(objects, null);
+    }
+
     public void print() {
         for (Object element : objects) {
             if (element != null) {
@@ -49,6 +61,16 @@ public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
         return false;
     }
 
+    public boolean isEmpty() {
+        int count = 0;
+        for (Object object : objects) {
+            if (object == null) {
+                count++;
+            }
+        }
+        return count == objects.length;
+    }
+
     @Override
     public int size() {
         return this.size;
@@ -57,4 +79,6 @@ public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
     private void increase() {
         objects = Arrays.copyOf(objects, size + 2);
     }
+
+
 }
