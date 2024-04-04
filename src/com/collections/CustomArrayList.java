@@ -38,6 +38,17 @@ public class CustomArrayList<E> extends AbstractList<E> implements List<E> {
         }
     }
 
+    public boolean contains(Object o) {
+        for (Object element : objects) {
+            if (element != null) {
+                if (element.equals(o)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     @Override
     public int size() {
         return this.size;
