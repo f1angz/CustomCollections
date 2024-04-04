@@ -3,7 +3,7 @@ package com.collections;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
+
 public class CustomArrayList<E> extends AbstractList<E> {
 
     private Object[] objects;
@@ -79,6 +79,4 @@ public class CustomArrayList<E> extends AbstractList<E> {
     private void increase() {
         objects = Arrays.copyOf(objects, size + 2);
     }
-
-
 }
